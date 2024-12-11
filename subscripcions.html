@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASMA</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/formulari.css">
+</head>
+
+<body>
+    <!-- Beta Version-->
+    <!-- Modal HTML -->
+    <div class="modal fade" id="modalBeta" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #0d6efd; color: #ffffff;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-exclamation-octagon" viewBox="0 0 16 16">
+                        <path
+                            d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z" />
+                        <path
+                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                    </svg>
+                    <h5 class="modal-title mx-2">Atenció</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <h4 class="text-center">Fase de desenvolupament <strong><br>βeta </strong></h4>
+                    <div class="d-flex justify-content-center my-3">
+                        <img class="img-fluid m-auto" width="50" src="/favicon.ico" alt="ASMA logo">
+                    </div>
+                    <p>Us comuniquem que l'aplicació actualment està en una fase de desenvolupament beta.</p>
+                    <p>Això significa que és possible que es produeixin incidències tècniques o errors ocasionals. Estem
+                        compromesos a millorar continuament i agraïm profundament la vostra paciència i comprensió
+                        durant aquest procés.</p>
+                    <p>Si experimenteu qualsevol problema, us animem a posar-vos en contacte directament a través del
+                        nostre correu electrònic a <a
+                            href="mailto:comunica@musicsandorra.com">comunica@musicsandorra.com</a></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal"
+                        aria-label="Acept">👍🏼 Entès</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#modalBeta').modal('show');
+        });
+    </script>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg bg-body-dark animate-slide4">
+        <div class="container-fluid px-5" style="z-index: 10;">
+            <a class="navbar-brand" href="/" style="opacity: 1;">
+                <img src="/assets/img/asma-logo-s.min.png" alt="Logo" width="100" class="d-inline-block align-text-top">
+            </a>
+            <div class="nav-item" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+                aria-controls="offcanvasExample">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header" style="background-color: #1b1b1b; color: white;" data-bs-theme="dark">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body p-0 ">
+            <div class="p-3">
+                <h5 class="mb-2 border-bottom" style="color: grey;">Informació</h5>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item" href="/" role="button">Inici</a>
+                </div>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item" data-bs-toggle="offcanvas" href="#objectius" role="button"
+                        aria-controls="offcanvasExample">Que és l'ASMA?</a>
+                </div>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item" data-bs-toggle="offcanvas" href="#equip" role="button"
+                        aria-controls="offcanvasExample">El nostre equip</a>
+                </div>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item" data-bs-toggle="offcanvas" href="#saberneMes" role="button"
+                        aria-controls="offcanvasExample">Vols ser soci?</a>
+                </div>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item" data-bs-toggle="offcanvas" href="#tarifes" role="button"
+                        aria-controls="offcanvasExample">Tarifes</a>
+                </div>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item" data-bs-toggle="offcanvas" href="#patrocinadorsCanva" role="button"
+                        aria-controls="offcanvasExample">Patrocinadors</a>
+                </div>
+                <br>
+                <h5 class="mb-2 border-bottom" style="color: grey;">Recursos</h5>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item" href="/subscripcions.html">Formulari d'inscripció</a>
+                </div>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item" href="/escaner-credencial.html">Escàner de credencial</a>
+                </div>
+                <div class="w-100 text-center p-2">
+                    <a class="menu-item"
+                        href="https://wa.me/376355526?text=Hola%2C%20estoy%20interesado%20en%20entrar%20a%20la%20comunidad%20de%20la%20asociaci%C3%B3n"
+                        target="_blank">Xat de WhatsApp</a>
+                </div>
+            </div>
+            <br>
+            <div class="p-3 footer-menu"
+                style="color: rgb(199, 199, 199); background-color: var(--dark-main); position: absolute; bottom: 0; width: 100%;">
+                <div>
+                    <a class="py-3" href="mailto:comunica@musicsandorra.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                        </svg>&nbsp;&nbsp;comunica@musicsandorra.com
+                    </a>
+                    <br>
+                    <br>
+                    <a class="pb-3" href="https://www.instagram.com/asma_andorra/" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                        </svg>&nbsp;&nbsp;@asma_andorra
+                    </a>
+                    <br><br>
+                </div>
+                <div class="border-top pt-3">
+                    <p class="p-0 m-0">⚡ Web desenvolupada i dissenyada per: <a style="color: rgb(185, 55, 94);"
+                            href="mailto:erikcodedeveloper@gmail.com">ErikWebDeveloper</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- El nostre equip-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="equip" aria-labelledby="elNostreEquip" style="width: 100%;">
+        <div class="offcanvas-header" style="background-color: #1b1b1b; color: white;">
+            <h1 class="offcanvas-title" id="elNostreEquip">El nostre equip</h1>
+            <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
+                    class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5" />
+                </svg>
+            </button>
+        </div>
+        <div class="offcanvas-body welcome">
+            <div class="m-auto" style="width: 100%; max-width: 800px;">
+                <div class="m-auto ">
+                    <h2>El nostre equip</h2>
+                    <hr>
+                    <!--<p>
+                        L'associació està formada per <strong>una junta de vuit membres</strong> dedicats i apassionats per la música.
+                    </p>-->
+                    <p>
+                        El nostre equip inclou músics professionals <i>(així com altres medis i entitats personals i
+                            professionals)</i> que <strong>treballen millorar la qualitat de vida del sector</strong> i
+                        promoure la música al país.
+                    </p>
+                </div>
+                <br>
+                <h2>Membres</h2>
+                <hr>
+                <div class="usuaris">
+                    <!-- Joan Gomez-->
+                    <div class="row m-auto mb-3 p-3 rounded"
+                        style="background-color: white; box-shadow: 1px 1px 10px #6363632f;">
+                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center p-3">
+                            <div class="imagen-usuario">
+                                <img class="img-fluid" src="/assets/img/home/Joan _Gomez_president.jpeg"
+                                    alt="Imatge de Joan Gomez">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3>Joan Gómez</h3>
+                            <h5 style="color: grey;">President</h5>
+                            <p style="font-size: .8rem;">Joan Gómez, amb una formació avançada en música moderna,
+                                destaca per la seva trajectòria com a professor de música amb
+                                més de 5 anys d'experiència. La seva carrera es caracteritza per la versatilitat, havent
+                                participat en una àmplia
+                                varietat de grups i estils, demostrant la seva capacitat d'adaptació i la seva
+                                profunditat artística. Aquesta combinació
+                                de formació acadèmica sòlida, experiència docent i participació activa en l'escena
+                                musical el converteixen en un
+                                professional complet i polifacètic en el camp de la música moderna.</p>
+                        </div>
+                    </div>
+                    <!-- Diego Galdon -->
+                    <div class="row m-auto mb-3 p-3 rounded"
+                        style="background-color: white; box-shadow: 1px 1px 10px #6363632f;">
+                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center p-3">
+                            <div class="imagen-usuario">
+                                <img class="img-fluid" src="/assets/img/home/Diego_Galdon_ secretari.jpeg"
+                                    alt="Imatge de Diego Galdón">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3>Diego Galdón</h3>
+                            <h5 style="color: grey;">Secretari</h5>
+                            <p style="font-size: .8rem;">Format a Andorra i Barcelona, aquest destacat musicòleg,
+                                educador i guitarrista combina una sòlida formació acadèmica i
+                                amb una profunda passió per la música. La seva experiència com a docent abasta
+                                prestigioses escoles privades de
+                                Catalunya i institucions a Andorra. Especialitzat en educació i etnomusicologia, ha
+                                contribuït en projectes amb l'IFMuC,
+                                la Biblioteca de Catalunya i la Societat del Gran Teatre del Liceu en tasques
+                                d'arxivística i investigació. Amb aquest
+                                bagatge, actualment es dedica a enriquir el sector musical des de l'associació, aportant
+                                visió i innovació.</p>
+                        </div>
+                    </div>
+                    <!-- Roland Moles -->
+                    <div class="row m-auto mb-3 p-3 rounded"
+                        style="background-color: white; box-shadow: 1px 1px 10px #6363632f;">
+                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="imagen-usuario">
+                                <img class="img-fluid" src="/assets/img/home/Roland_Moles_ vocal.jpeg"
+                                    alt="Imatge de Roland Moles">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3>Roland Moles</h3>
+                            <h5 style="color: grey;">Vocal</h5>
+                            <p style="font-size: .8rem;">Guitarrista clàssic andorrà, la seva vida gira entorn de la
+                                guitarra, amb la música com a llenguatge primordial i
+                                l'escenari com a veritable llar. La seva carrera es caracteritza per una fusió de
+                                talent, tècnica exquisida i una
+                                profunda sensibilitat, fruit de l'aprenentatge amb els més destacats mestres de la
+                                guitarra. La seva participació com a
+                                membre de la prestigiosa Orquestra de Guitarres de Barcelona, i les seves actuacions en
+                                llocs de renom com el Palau de
+                                la Música Catalana, reflecteixen la seva excel·lència musical. Aquesta trajectòria
+                                distingida, marcada per la passió i
+                                el compromís amb l'art de la guitarra, el qualifica de manera sobresortint per ocupar un
+                                lloc com a vocal a la junta
+                                directiva de l'associació de músics d'Andorra, on la seva experiència i visió aporten un
+                                valor inestimable..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Objectius de l'ASMA -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="objectius" aria-labelledby="objectiusDeASMA"
+        style="width: 100%;">
+        <div class="offcanvas-header" style="background-color: #1b1b1b; color: white;">
+            <h1 class="offcanvas-title" id="objectiusDeASMA">ASMA</h1>
+            <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
+                    class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5" />
+                </svg>
+            </button>
+        </div>
+        <div class="offcanvas-body welcome">
+            <div class="m-auto" style="max-width: 900px;">
+                <div class="m-auto">
+                    <h2 class="pb-2 border-bottom">Que és l'ASMA?</h2>
+                    <p>L'Associació de Músics d'Andorra (ASMA) <strong>és una entitat que representa col·lectivament els
+                            músics</strong> per abordar i gestionar els seus interessos i necessitats professionals i
+                        culturals. </p>
+                    <p><strong>L'ASMA es compromet en la defensa i el progrés dels interessos professionals dels seus
+                            membres</strong>, assegurant els seus drets i fomentant iniciatives que enriqueixen l'escena
+                        musical d'Andorra. La seva activitat inclou la interacció amb entitats polítiques i culturals
+                        per assegurar que les preocupacions i les aspiracions dels músics andorrans siguin reconegudes i
+                        suportades, afavorint la igualtat d'oportunitats en el sector.</p>
+                </div>
+                <div class="m-auto">
+                    <h2 class="pb-2 border-bottom">Els nostres objectius</h2>
+                    <p>
+                        La nostra missió és <strong>impulsar la cultura musical local</strong>, millorant la visibilitat
+                        i el creixement sostenible. Treballem
+                        per una comunicació efectiva entre músics locals, el públic i la comunitat andorrana, abordant
+                        la desigualtat
+                        d'oportunitats i enriquint l'educació i els espais culturals per als joves. També treballem per
+                        a implicar i
+                        responsabilitzar a les entitats públiques per la millora del sector.
+                    </p>
+
+                </div>
+
+                <div class="m-auto">
+                    <h2 class="pb-2 border-bottom">Objectius</h2>
+
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-2">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Promoure i donar suport</h3>
+                                <p>Promoure i donar suport a la música a Andorra.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Millorar la comunicació</h3>
+                                <p>Millorar la comunicació entre la comunitat, la població, les entitats privades i els
+                                    mitjans de difusió i comunicació.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Generar una comunitat</h3>
+                                <p>Generar una comunitat activa entre els músics.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Base de dades activa</h3>
+                                <p>Disposar d'una base de dades activa dels músics per a millorar l'accés i la
+                                    comunicació de la comunitat.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Oferir oportunitats</h3>
+                                <p>Oferir oportunitats de desenvolupament i col·laboració als músics locals.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Millorar el desenvolupament</h3>
+                                <p>Millorar el desenvolupament i l'educació cultural dels joves.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Millorar l'estabilitat</h3>
+                                <p>Millorar l'estabilitat del mercat de contractacions.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Mitjans de formació</h3>
+                                <p>Crear mitjans de formació fiables per als músics.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Bucs d'assaig</h3>
+                                <p>Millorar la disponibilitat dels bucs d'assaig.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Desenvolupament jurídic</h3>
+                                <p>Crear oportunitats de desenvolupament jurídic per la comunitat.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Millora del sector</h3>
+                                <p>Implicar fermament a les entitats polítiques i culturals responsables de la millora
+                                    del sector.</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Organitzar esdeveniments</h3>
+                                <p>Organitzar esdeveniments musicals per a la comunitat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-auto">
+                    <hr>
+                    <p class="fs-6">
+                        L'associació de Músics d'Andorra està al front d'una era de creixement i professionalització.
+                        Amb <strong>l'objectiu de superar
+                            la falta de recursos i visibilitat</strong>, la clau està en la col·laboració amb entitats
+                        culturals i governamentals, a més
+                        d'invertir en <strong>educació musical.</strong> Aquestes accions no només enriquiran el teixit
+                        cultural andorrà sinó que també oferiran
+                        <strong>noves oportunitats</strong> i inspiració als músics locals, marcant l'inici d'una nova
+                        etapa per a la música a Andorra.
+                    </p>
+                </div>
+
+                <div class="m-auto p-3" style="background-color: #ddeffd; color: #3a6baf; font-size: .8rem;">
+
+                    <div>
+                        <h5>Futurs Objectius</h5>
+                        <p>
+                            Ens proposem col·laborar amb la SDADV per enfortir la cultura musical a Andorra, incloent la
+                            possibilitat de tocar en
+                            espais públics, professionalització del sector i promoció d'esdeveniments. També estem
+                            treballant per al desenvolupament
+                            d'un portal d'usuaris per a la millora de la identificació del soci. A més, busquem millorar
+                            l'educació musico social
+                            mitjançant noves iniciatives. Seguim en recerca de nous col·laboradors, així com amb un
+                            exhaustiu estudi del sector.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Saber-ne més (SOCIS)-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="saberneMes" aria-labelledby="saberneMes"
+        style="width: 100%;">
+        <div class="offcanvas-header" style="background-color: #1b1b1b; color: white;">
+            <h1 class="offcanvas-title" id="saberneMes">Socis de l'ASMA</h1>
+            <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
+                    class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5" />
+                </svg>
+            </button>
+        </div>
+        <div class="offcanvas-body socis">
+            <div class="m-auto" style="width: 100%; max-width: 800px;">
+                <div class="m-auto ">
+                    <h2 class="pb-2 border-bottom">Per què ser soci de l'ASMA?</h2>
+                    <p>
+                        Ser soci de la nostra associació significa ingressar a un món de <strong>possibilitats i
+                            suport</strong> que potencialitzarà la teva
+                        carrera artística. Amb quotes dissenyades per adaptar-se a les teves necessitats, oferim una
+                        <strong>varietat d'avantatges
+                            exclusius.</strong>
+                    </p>
+                    <h2 class="pb-2 border-bottom">Quins avantatges tinc?</h2>
+                    <p>
+                        Des de <strong>descomptes</strong> en botigues de música fins a <strong>assessorament
+                            jurídic</strong>, <strong>tallers</strong>, <strong>masterclasses i participació en
+                            projectes</strong>, les nostres ofertes estan pensades per enfortir la teva presència en el
+                        món musical. La teva subscripció et
+                        proporcionarà <strong>accés a la nostra comunitat</strong>, una base de dades rica en
+                        oportunitats, i la possibilitat de votar i
+                        <strong>expressar la teva opinió</strong> en els canals de comunicació i reunions de
+                        l'associació.
+                    </p>
+                    <div class="text-center p-3">
+                        <img src="favicon.ico" alt="ASMA-logo" class="img-fluid" width="50">
+                    </div>
+
+                    <div class="mt-3 text-center p-3">
+                        <p>
+                            <strong>Et convidem a subscriure't</strong> i ser part activa d'aquesta comunitat que creix
+                            i
+                            prospera amb cada nou membre. Unir-te a
+                            nosaltres significa ser part d'aquesta història musical compartida.
+                        </p>
+                    </div>
+
+                    <div class="text-center mb-5 d-flex gap-2" style="width: 100%;">
+                        <a class="btn btn-primary flex-fill" href="/subscripcions.html" role="button">Formulari
+                            d'inscripció</a>
+                        <a class="btn btn-outline-primary flex-fill" data-bs-toggle="offcanvas" href="#tarifes"
+                            role="button" aria-controls="offcanvasExample">
+                            Tarifes
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Tarifes (SOCIS)-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="tarifes" aria-labelledby="tarifes" style="width: 100%;">
+        <div class="offcanvas-header" style="background-color: #1b1b1b; color: white;">
+            <h1 class="offcanvas-title" id="tarifes">Tarifes de socis</h1>
+            <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
+                    class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5" />
+                </svg>
+            </button>
+        </div>
+        <div class="offcanvas-body socis">
+            <div class="m-auto" style="width: 100%; max-width: 800px;">
+                <div class="m-auto">
+                    <p>Amb les nostres tarifes diversificades, volem enfortir la comunitat musical, oferint opcions que
+                        s'ajustin a cada etapa
+                        de la teva carrera artística.</p>
+                </div>
+
+                <div>
+                    <h2 class="mb-2 border-bottom">Tarifes</h2>
+                    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+                        <div class="col" style="min-width: 50%;">
+                            <div class="card mb-4 rounded-3 shadow-sm">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Standard</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="card-title pricing-card-title">€ 25<small
+                                            class="text-body-secondary fw-light">/any</small></h1>
+                                    <ul class="list-unstyled mt-3 mb-4">
+                                        <li>· Descomptes a botigues de música</li>
+                                        <li>· Butlletí informatiu anual</li>
+                                        <li>· 1 taller anual gratuït</li>
+                                        <li>· Accés a la comunitat i base de dades de l'associació</li>
+                                        <li>· Dret a vot i opinió als canals de comunicació i reunions de l'associació
+                                        </li>
+                                        <br><br><br><br><br><br>
+                                    </ul>
+                                    <a role="button" href="/subscripcions.html"
+                                        class="w-100 btn btn-lg btn-outline-primary">Subscriure'm</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" style="min-width: 50%;">
+                            <div class="card mb-4 rounded-3 shadow-sm">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Estudiant</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="card-title pricing-card-title">€ 65<small
+                                            class="text-body-secondary fw-light">/any</small>
+                                    </h1>
+                                    <ul class="list-unstyled mt-3 mb-4">
+                                        <li>· <strong>Només per a menors de 25 anys.</strong></li>
+                                        <li>· Descomptes a botigues de música i empreses de fotografia i merchandising.
+                                        </li>
+                                        <li>· Assessorament jurídic</li>
+                                        <li>· Butlletí informatiu anual.</li>
+                                        <li>· 1 taller anual gratuït</li>
+                                        <li>· 1 masterclass gratuïta</li>
+                                        <li>· Accés i promoció a la comunitat i base de dades de l'associació</li>
+                                        <li>· Dret a vot i opinió als canals de comunicació i reunions de l'associació
+                                        </li>
+                                        <li>· Possibilitat de participar en projectes de l'associació</li>
+                                    </ul>
+                                    <a role="button" href="/subscripcions.html"
+                                        class="w-100 btn btn-lg btn-outline-primary">Subscriure'm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+                        <div class="col" style="min-width: 50%;">
+                            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                                <div class="card-header py-3 text-bg-primary border-primary">
+                                    <h4 class="my-0 fw-normal">Professional</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="card-title pricing-card-title">€ 90<small
+                                            class="text-body-secondary fw-light">/any</small>
+                                    </h1>
+                                    <ul class="list-unstyled mt-3 mb-4">
+                                        <li>· Descomptes a totes les empreses col·laboradores de l'associació</li>
+                                        <li>· Assessorament jurídic</li>
+                                        <li>· Butlletí informatiu anual</li>
+                                        <li>· 1 taller anual gratuït</li>
+                                        <li>· 1 masterclass gratuïta.</li>
+                                        <li>· Accés i promoció a la comunitat i base de dades de l'associació</li>
+                                        <li>· Dret a vot i opinió als canals de comunicació i reunions de l'associació
+                                        </li>
+                                        <li>· Possibilitat de participar en projectes de l'associació</li>
+                                    </ul>
+                                    <br>
+                                    <a role="button" href="/subscripcions.html"
+                                        class="w-100 btn btn-lg btn-outline-primary">Subscriure'm</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" style="min-width: 50%;">
+                            <div class="card mb-4 rounded-3 shadow-sm">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Grups de Música</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="card-title pricing-card-title">€ 420<small
+                                            class="text-body-secondary fw-light">/any</small>
+                                    </h1>
+                                    <ul class="list-unstyled mt-3 mb-4">
+                                        <li>· <strong>6 membres màxim</strong>.</li>
+                                        <li>· Descomptes a totes les empreses col·laboradores de l'associació.</li>
+                                        <li>· Assessorament jurídic.</li>
+                                        <li>· Butlletí informatiu anual.</li>
+                                        <li>· 1 taller anual gratuït.</li>
+                                        <li>· 2 masterclass gratuïta</li>
+                                        <li>· Accés i promoció a la comunitat i base de dades de l'associació.</li>
+                                        <li>· Dret a vot i opinió als canals de comunicació i reunions de l'associació
+                                        </li>
+                                        <li>· Possibilitat de participar en projectes de l'associació</li>
+                                    </ul>
+                                    <a role="button" href="/subscripcions.html"
+                                        class="w-100 btn btn-lg btn-outline-primary">Subscriure'm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Patrocinadors -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="patrocinadorsCanva" aria-labelledby="patrocinadors"
+        style="width: 100%;">
+        <div class="offcanvas-header" style="background-color: #1b1b1b; color: white;">
+            <h1 class="offcanvas-title" id="patrocinadorsCanva">Patrocinadors</h1>
+            <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
+                    class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5" />
+                </svg>
+            </button>
+        </div>
+        <div class="offcanvas-body patrocinadorsCanva">
+            <div class="m-auto" style="width: 100%; max-width: 800px;">
+                <div class="m-auto ">
+                    <h3>Promocions especials</h3>
+                    <hr>
+                    <p>
+                        <strong>Gràcies al suport dels nostres patrocinadors</strong>, podem oferir-vos una experiència
+                        única i plena de beneficis.
+                    </p>
+                    <p>
+                        <strong>Estar subscrit a la nostra plataforma et permetrà accedir a ofertes exclusives</strong>
+                        i promocions especials proporcionades pels nostres col·laboradors.
+                    </p>
+                    <br>
+                    <h3>Patrocinadors</h3>
+                    <hr>
+
+                    <div class="patrocinadoresCanva-cartas">
+                        <!-- Compra i lloguer de material -->
+                        <div class="d-flex justify-content-center align-items-center rounded p-3 mb-3"
+                            style="background-color: #ffffff; font-size: .8rem; box-shadow: 1px 1px 50px #0000000c; overflow: hidden;">
+                            <div class="m-auto d-flex justify-content-center align-items-center p-3"
+                                style="width: 25%;">
+                                <img class="img-fluid p-1 rounded" width="100"
+                                    src="/assets/img/home/fanatic_guitars.svg" alt="Fanatic Guitars Logo"
+                                    style="background-color: #000000;">
+                            </div>
+                            <div class="m-auto flex-fill">
+                                <h5>Fanatic Guitars</h5>
+                                <p>Botiga d'instruments</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg>
+                                <a class="link-underline link-underline-opacity-0" href="https://www.fanaticguitars.com"
+                                    target="_blank">www.fanaticguitars.com</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center rounded p-3 mb-3"
+                            style="background-color: #ffffff; font-size: .8rem; box-shadow: 1px 1px 50px #0000000c; overflow: hidden;">
+                            <div class="m-auto d-flex justify-content-center align-items-center p-3"
+                                style="width: 25%;;">
+                                <img class="img-fluid rounded" width="100"
+                                    src="/assets/img/home/promusica-andorra-logo.png" alt="ProMúsica Andorra Logo"
+                                    style="background-color: #ffffff;">
+                            </div>
+                            <div class="m-auto flex-fill">
+                                <h5>ProMúsica Andorra</h5>
+                                <p>Botiga d'instruments</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg>
+                                <a class="link-underline link-underline-opacity-0"
+                                    href="http://www.promusicaandorra.com" target="_blank">www.promusicaandorra.com</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center rounded p-3 mb-3"
+                            style="background-color: #ffffff; font-size: .8rem; box-shadow: 1px 1px 50px #0000000c; overflow: hidden;">
+                            <div class="m-auto d-flex justify-content-center align-items-center p-3"
+                                style="width: 25%;;">
+                                <img class="img-fluid rounded" width="100" src="/assets/img/home/jolibut_pianos.webp"
+                                    alt="Jolibut Pianos Logo" style="background-color: #ffffff;">
+                            </div>
+                            <div class="m-auto flex-fill">
+                                <h5>Jolibut</h5>
+                                <p>Lloguer de backline</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg>
+                                <a class="link-underline link-underline-opacity-0" href="https://www.jolibutpianos.com"
+                                    target="_blank">www.jolibutpianos.com</a>
+                            </div>
+                        </div>
+                        <!-- Disseny, imatge, fotografia i merchandising -->
+                        <div class="d-flex justify-content-center align-items-center rounded p-3 mb-3"
+                            style="background-color: #ffffff; font-size: .8rem; box-shadow: 1px 1px 50px #0000000c; overflow: hidden;">
+                            <div class="m-auto d-flex justify-content-center align-items-center p-3"
+                                style="width: 25%;;">
+                                <img class="img-fluid rounded" width="100"
+                                    src="/assets/img/home/guardias_publicitat.jpeg" alt="Guardias Publicitat Logo"
+                                    style="background-color: #ffffff;">
+                            </div>
+                            <div class="m-auto flex-fill">
+                                <h5>Guardias Publicitat</h5>
+                                <p>Impremta i serigrafia</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg>
+                                <a class="link-underline link-underline-opacity-0"
+                                    href="https://www.instagram.com/g.p._andorra/" target="_blank">@g.p._andorra</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center rounded p-3 mb-3"
+                            style="background-color: #ffffff; font-size: .8rem; box-shadow: 1px 1px 50px #0000000c; overflow: hidden;">
+                            <div class="m-auto d-flex justify-content-center align-items-center p-3"
+                                style="width: 25%;;">
+                                <img class="img-fluid rounded" width="100" src="""
+                                    alt=" Jordi Pujol Logo" style="background-color: #ffffff;">
+                            </div>
+                            <div class="m-auto flex-fill">
+                                <h5>Jordi Pujol Fotografia</h5>
+                                <p>Estudi fotogràfic</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg>
+                                <a class="link-underline link-underline-opacity-0"
+                                    href="https://www.facebook.com/jordipujolfotografia"
+                                    target="_blank">@jordipujolfotografia</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center rounded p-3 mb-3"
+                            style="background-color: #ffffff; font-size: .8rem; box-shadow: 1px 1px 50px #0000000c; overflow: hidden;">
+                            <div class="m-auto d-flex justify-content-center align-items-center p-3"
+                                style="width: 25%;;">
+                                <img class="img-fluid rounded" width="100"
+                                    src="/assets/img/home/grafica_de_ferro_logo.png" alt="Gràfica de ferro Logo"
+                                    style="background-color: #ffffff;">
+                            </div>
+                            <div class="m-auto flex-fill">
+                                <h5>Gràfica de ferro</h5>
+                                <p>Estudi de disseny</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg>
+                                <a class="link-underline link-underline-opacity-0" href="https://graficadeferro.com"
+                                    target="_blank">www.graficadeferro.com</a>
+                            </div>
+                        </div>
+                        <!-- Productors/estudis -->
+                        <div class="d-flex justify-content-center align-items-center rounded p-3 mb-3"
+                            style="background-color: #ffffff; font-size: .8rem; box-shadow: 1px 1px 50px #0000000c; overflow: hidden;">
+                            <div class="m-auto d-flex justify-content-center align-items-center p-3"
+                                style="width: 25%;;">
+                                <img class="img-fluid rounded p-1" width="100"
+                                    src="/assets/img/home/jordi_barcelo_logo.png" alt="Barceló Music Logo"
+                                    style="background-color: #000000;">
+                            </div>
+                            <div class="m-auto flex-fill">
+                                <h5>Barceló Music</h5>
+                                <p>Estudi</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg>
+                                <a class="link-underline link-underline-opacity-0" href="https://jordibarcelo.com"
+                                    target="_blank">www.jordibarcelo.com</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center rounded p-3 mb-3"
+                            style="background-color: #ffffff; font-size: .8rem; box-shadow: 1px 1px 50px #0000000c; overflow: hidden;">
+                            <div class="m-auto d-flex justify-content-center align-items-center p-3"
+                                style="width: 25%;;">
+                                <img class="img-fluid rounded" width="100"
+                                    src="/assets/img/home/sonnos_andorra_logo.jpeg" alt="SONNOS Andorra Logo"
+                                    style="background-color: #ffffff;">
+                            </div>
+                            <div class="m-auto flex-fill">
+                                <h5>SONNOS Andorra</h5>
+                                <p>Estudi</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
+                                    <path
+                                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
+                                </svg>
+                                <a class="link-underline link-underline-opacity-0"
+                                    href="https://www.instagram.com/sonnosandorra/" target="_blank">@sonnosandorra</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Descripción página -->
+    <section id="info-hero">
+        <div class="contenedor-info fade-in-section">
+            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
+                class="bi bi-input-cursor-text" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M5 2a.5.5 0 0 1 .5-.5c.862 0 1.573.287 2.06.566.174.099.321.198.44.286.119-.088.266-.187.44-.286A4.17 4.17 0 0 1 10.5 1.5a.5.5 0 0 1 0 1c-.638 0-1.177.213-1.564.434a3.5 3.5 0 0 0-.436.294V7.5H9a.5.5 0 0 1 0 1h-.5v4.272c.1.08.248.187.436.294.387.221.926.434 1.564.434a.5.5 0 0 1 0 1 4.17 4.17 0 0 1-2.06-.566A5 5 0 0 1 8 13.65a5 5 0 0 1-.44.285 4.17 4.17 0 0 1-2.06.566.5.5 0 0 1 0-1c.638 0 1.177-.213 1.564-.434.188-.107.335-.214.436-.294V8.5H7a.5.5 0 0 1 0-1h.5V3.228a3.5 3.5 0 0 0-.436-.294A3.17 3.17 0 0 0 5.5 2.5.5.5 0 0 1 5 2" />
+                <path
+                    d="M10 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4v1h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4zM6 5V4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" />
+            </svg>
+            <h1 class="mt-5">Formulari de Registre</h1>
+            <p>
+                Benvinguts al Formulari de Registre de Membres de l'Associació de Músics d'Andorra.
+            </p>
+            <div class="text-center">
+                <a class="btn btn-primary" href="#formulari-inscripcio" role="button">Començar</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario -->
+    <div class="contenedor-formulari">
+        <form id="formulari-inscripcio" action="" class="page-box rounded" enctype="multipart/form-data">
+            <!-- Acordeón-->
+            <div class="accordion rounded" id="accordionForm">
+
+                <!-- QUOTA -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <strong>QUOTA</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionForm">
+                        <div class="accordion-body">
+
+                            <div class="form-group">
+                                <p>Selecciona <strong>la quota</strong> la qual t'agradaria inscirure't:</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="user_share" id="standard"
+                                        value="Standard" required>
+                                    <label class="form-check-label" for="standard">Standard</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="user_share" id="estudiant"
+                                        value="Estudiant" required>
+                                    <label class="form-check-label" for="estudiant">Estudiant</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="user_share" id="pro"
+                                        value="Profesional" required>
+                                    <label class="form-check-label" for="pro">Professionals</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="user_share" id="grup"
+                                        value="Grup" required>
+                                    <label class="form-check-label" for="grup">Grups de Música</label>
+                                </div>
+                                <hr>
+                                <div class="info-card">
+                                    <span>Consulta les quotes fent clic <a data-bs-toggle="offcanvas" href="#tarifes"
+                                            role="button" aria-controls="offcanvasExample">aquí</a>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INFORMACIÓ DE LA QUOTA -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button disabled class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <strong>INFORMACIÓ DE LA QUOTA</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
+                        <div class="accordion-body">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="sub_email" placeholder="Correu electrònic"
+                                    maxlength="100" name="sub_email">
+                                <label for="sub_email">Correu electrònic</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="sub_phone" placeholder="Telèfon de contacte"
+                                    maxlength="20" name="sub_phone">
+                                <label for="sub_phone">Telèfon de contacte</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DADES PERSONALS -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button disabled class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseQuota" aria-expanded="false" aria-controls="collapseQuota">
+                            <strong>DADES PERSONALS</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseQuota" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
+                        <div class="accordion-body" id="userPersonalData">
+                            <!-- Un usuario-->
+                            <div id="single-user" style="display: none;">
+                                <div class="accordion-body p-0">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="user_name"
+                                            placeholder="Nom i cognoms" name="user_name">
+                                        <label for="user_name">Nom i cognoms</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="user_instrument"
+                                            placeholder="Instrument principal " name="user_instrument"
+                                            list="opcionesInstrumentos">
+                                        <label for="user_instrument">Instrument principal</label>
+                                        <!-- Datalist con opciones predefinidas -->
+                                        <datalist id="opcionesInstrumentos">
+                                            <option value="Guitarra elèctrica">Guitarra elèctrica</option>
+                                            <option value="Piano">Piano</option>
+                                            <option value="Baix elèctric">Baix elèctric</option>
+                                            <option value="Violí">Violí</option>
+                                            <option value="Trompeta">Trompeta</option>
+                                            <option value="Flauta">Flauta</option>
+                                            <option value="Clarinet">Clarinet</option>
+                                            <option value="Saxòfon">Saxòfon</option>
+                                            <option value="Bateria">Bateria</option>
+                                            <option value="Violoncel">Violoncel</option>
+                                            <option value="Viola">Viola</option>
+                                            <option value="Contrabaix">Contrabaix</option>
+                                            <option value="Teclat">Teclat</option>
+                                            <option value="Orgue">Orgue</option>
+                                            <option value="Trombó">Trombó</option>
+                                            <option value="Trompa">Trompa</option>
+                                            <option value="Banjo">Banjo</option>
+                                            <option value="Xilòfon">Xilòfon</option>
+                                            <option value="Marimba">Marimba</option>
+                                            <option value="Acordeó">Acordeó</option>
+                                            <option value="Címbals">Címbals</option>
+                                            <option value="Oboè">Oboè</option>
+                                            <option value="Fiscorn">Fiscorn</option>
+                                            <option value="Sitar">Sitar</option>
+                                            <option value="Saxofon baix">Saxofon baix</option>
+                                            <option value="Timbals">Timbals</option>
+                                            <option value="Gaita">Gaita</option>
+                                            <option value="Fagot">Fagot</option>
+                                            <option value="Tamborí">Tamborí</option>
+                                            <option value="Mandolina">Mandolina</option>
+                                            <option value="Balalaika">Balalaika</option>
+                                            <option value="Ukulele">Ukulele</option>
+                                            <option value="Bongos">Bongos</option>
+                                            <option value="Harmònica">Harmònica</option>
+                                            <option value="Xerrac">Xerrac</option>
+                                            <option value="Theremin">Theremin</option>
+                                            <option value="Corneta">Corneta</option>
+                                            <option value="Flabiol">Flabiol</option>
+                                            <option value="Mridanga">Mridanga</option>
+                                            <option value="Santoor">Santoor</option>
+                                            <option value="Dulzaina">Dulzaina</option>
+                                            <option value="Esraj">Esraj</option>
+                                            <option value="Tar">Tar</option>
+                                            <option value="Anklung">Anklung</option>
+                                            <option value="Harmonium">Harmonium</option>
+                                            <option value="Concertina">Concertina</option>
+                                            <option value="Xilòfon baix">Xilòfon baix</option>
+                                            <option value="Tabla">Tabla</option>
+                                            <option value="Hang">Hang</option>
+                                            <option value="Daf">Daf</option>
+                                            <option value="Sintetitzador">Sintetitzador</option>
+                                            <option value="Tuba">Tuba</option>
+                                            <option value="Dolçaina">Dolçaina</option>
+                                            <option value="Baglama">Baglama</option>
+                                            <option value="Guitarra acústica">Guitarra acústica</option>
+                                            <option value="Timple">Timple</option>
+                                            <option value="Koto">Koto</option>
+                                            <option value="Trompeta piccolo">Trompeta piccolo</option>
+                                            <option value="Glockenspiel">Glockenspiel</option>
+                                            <option value="Guitarra clàssica">Guitarra clàssica</option>
+                                            <option value="Fiscorn tenor">Fiscorn tenor</option>
+                                            <option value="Guzheng">Guzheng</option>
+                                            <option value="Djembe">Djembe</option>
+                                            <option value="Dulcémele">Dulcémele</option>
+                                            <option value="Duduk">Duduk</option>
+                                            <option value="Laud">Laud</option>
+                                            <option value="Veena">Veena</option>
+                                            <option value="Charango">Charango</option>
+                                            <option value="Tible">Tible</option>
+                                            <option value="Armònica de vidre">Armònica de vidre</option>
+                                        </datalist>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <p>Fotografía de perfil</p>
+                                        <div id="contenedorPreviewFoto" class="contenedorPreview m-auto mb-3">
+                                            <img id="previewFoto" class="preview" alt="Vista previa de la foto"
+                                                src="/assets/img/default-foto.png">
+                                        </div>
+                                        <input class="form-control" type="file" id="user_foto" accept="image/*"
+                                            name="user_foto" key="user_foto" required>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <p>Fotocòpia/Fotografía del passaport o residència</p>
+                                        <div id="contenedorPreviewPasport" class="contenedorPreview m-auto mb-3">
+                                            <img id="previewPasport" class="preview" alt="Vista previa del passaporte"
+                                                src="/assets/img/default-pasport.png">
+                                        </div>
+                                        <input class="form-control" type="file" id="user_pasport" key="user_pasport"
+                                            name="user_pasport" accept="image/*" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Multi Usuarios-->
+                            <div id="multi-user" style="display: none;">
+                                <div class="accordion-body p-0">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="grupo_name"
+                                            placeholder="Nom del grup">
+                                        <label for="user_name">Nom del grup</label>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <p>Logo/Fotografía del grup</p>
+                                        <div id="contenedorPreviewLogo" class="contenedorPreview m-auto">
+                                            <img id="previewLogo" class="preview" alt="Vista previa de la foto"
+                                                src="/assets/img/default-band.png">
+                                        </div>
+                                        <input class="form-control mt-3" type="file" id="grupo_logo" accept="image/*"
+                                            required key="grupo_logo">
+                                    </div>
+                                    <hr>
+                                    <div class="info-card mb-3">
+                                        <span><strong>Mínim 1</strong> integrant i un <strong>màxim 6</strong>
+                                            integrants</span>
+                                    </div>
+                                    <div class="form-group d-flex mb-3">
+                                        <span class="flex-fill">Integrants del grup</span>
+                                        <button id="addBtn" type="button"
+                                            class="btn btn-outline-secondary btn-sm flex-fill" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            + Afegir
+                                        </button>
+                                    </div>
+                                    <!-- Miembros Container-->
+                                    <div id="walletContainer" class="form-group mb-3">
+
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header"
+                                                    style="background-color: rgb(198, 215, 245); color: rgb(48, 97, 124);">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Afegir integrant
+                                                    </h1>
+                                                    <button id="closeModalUp" type="button" class="btn-close"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="user">
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="member_name"
+                                                                placeholder="Nom i cognoms" name="member_name"
+                                                                key="user_name">
+                                                            <label for="member_name">Nom i cognoms</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control"
+                                                                id="member_instrument"
+                                                                placeholder="Instrument principal"
+                                                                list="opcionesInstrumentos" name="member_instrument"
+                                                                key="user_instrument">
+                                                            <label for="member_instrument">Instrument principal</label>
+                                                        </div>
+                                                        <div class="form-group mb-3">
+                                                            <p>Fotografía de perfil</p>
+                                                            <div id="contenedorPreviewFotoMember"
+                                                                class="contenedorPreview m-auto">
+                                                                <img id="previewFotoMember" class="preview"
+                                                                    alt="Vista previa de la foto"
+                                                                    src="/assets/img/default-foto.png">
+                                                            </div>
+                                                            <input class="form-control mt-3" type="file"
+                                                                id="member_foto" accept="image/*" required
+                                                                name="member_foto" key="user_foto">
+                                                        </div>
+                                                        <div class="form-group mb-3">
+                                                            <p>Fotocòpia/Fotografía del Passaport</p>
+                                                            <div id="contenedorPreviewPasportMember"
+                                                                class="contenedorPreview m-auto">
+                                                                <img id="previewPasportMember" class="preview"
+                                                                    alt="Vista previa del passaporte"
+                                                                    src="/assets/img/default-pasport.png">
+                                                            </div>
+                                                            <input class="form-control mt-3" type="file"
+                                                                id="member_pasport" accept="image/*" required
+                                                                name="member_pasport" key="user_pasport">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal" id="closeModalMember">Tancar</button>
+                                                    <button type="button" class="btn btn-primary" id="saveModalMemder"
+                                                        disabled>Guardar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INFORMACIÓ ADICIONAL (opcional) -->
+                <div class="accordion-item" id="informacio-personal">
+                    <h2 class="accordion-header">
+                        <button disabled class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <strong>INFORMACIÓ ADICIONAL</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
+                        <div class="accordion-body">
+                            <div class="info-card">
+                                <span>Aquesta secció és opcional, i està dissenyada per recollir informació clau que ens
+                                    ajudarà a progressar amb l'estudi del sector.</span>
+                            </div>
+                            <div class="pt-3" style="font-size: 0.8rem;">
+                                <p class="text-end" id="btnSkip" style="cursor: pointer;">Saltar</p>
+                            </div>
+                            <hr>
+                            <!-- BD 1 -->
+                            <div class="form-group">
+                                <p>Amb quin <strong>estil de música</strong> estàs més familiaritzat?</p>
+                                <input type="text" class="form-control" name="bd-1" id="bd-1" list="generos">
+                                <!-- Data List-->
+                                <datalist id="generos">
+                                    <option value="Pop">
+                                    <option value="Rock">
+                                    <option value="Jazz">
+                                    <option value="Electrònica">
+                                    <option value="Hip-hop">
+                                    <option value="Rap">
+                                    <option value="Reggae">
+                                    <option value="Ska">
+                                    <option value="Punk">
+                                    <option value="Metal">
+                                    <option value="Blues">
+                                    <option value="Country">
+                                    <option value="Folk">
+                                    <option value="Clàssica">
+                                    <option value="Rumba">
+                                    <option value="Salsa">
+                                    <option value="Bossa Nova">
+                                    <option value="Flamenc">
+                                    <option value="Cumbia">
+                                    <option value="Tango">
+                                    <option value="Soul">
+                                    <option value="Funk">
+                                    <option value="Disco">
+                                    <option value="Techno">
+                                    <option value="House">
+                                    <option value="Trance">
+                                    <option value="Dancehall">
+                                    <option value="Merengue">
+                                    <option value="Vallenato">
+                                    <option value="Fusió">
+                                    <option value="Indie">
+                                    <option value="Alternatiu">
+                                    <option value="Experimental">
+                                    <option value="R&B">
+                                    <option value="Gospel">
+                                    <option value="New Age">
+                                    <option value="Ambient">
+                                    <option value="Electroacústica">
+                                    <option value="World Music">
+                                    <option value="Trap">
+                                    <option value="Dubstep">
+                                    <option value="K-Pop">
+                                    <option value="J-Pop">
+                                    <option value="Reggaeton">
+                                    <option value="Bachata">
+                                    <option value="Vocal">
+                                </datalist>
+                            </div>
+                            <!-- BD 2 -->
+                            <div class="form-group">
+                                <p>Has rebut <strong>beques o subvencions</strong> per financiar la teva professió
+                                    musical?
+                                </p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bd-2" id="bd-2-1" value="Sí.">
+                                    <label class="form-check-label" for="bd-2-1">
+                                        Sí.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bd-2" id="bd-2-2" value="No.">
+                                    <label class="form-check-label" for="bd-2-2">
+                                        No.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bd-2" id="bd-2-3"
+                                        value="No les he necessitat.">
+                                    <label class="form-check-label" for="bd-2-3">
+                                        No les he necessitat.
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- BD 3-->
+                            <div class="form-group">
+                                <p>Et dediques o t'has dedicat <strong>professionalment a la música</strong>?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bd-3" id="bd-3-1"
+                                        value="Sí, m'hi dedico.">
+                                    <label class="form-check-label" for="bd-3-1">
+                                        Sí, m'hi dedico.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bd-3" id="bd-3-2"
+                                        value="No, pero m'hi he dedicat.">
+                                    <label class="form-check-label" for="bd-3-2">
+                                        No, pero m'hi he dedicat.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bd-3" id="bd-3-3" value="No.">
+                                    <label class="form-check-label" for="bd-3-3">
+                                        No.
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- BD 4 -->
+                            <div class="form-group">
+                                <p>Et resulta complicat trobar <strong>oportunitats laborals</strong>?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bd-4" id="bd-4-1"
+                                        value="Sí. Mai he tingut cap problema trobant feina com a músic.">
+                                    <label class="form-check-label" for="bd-4-1">
+                                        Sí. Mai he tingut cap problema trobant feina com a músic.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="bd-4" id="bd-4-2"
+                                        value="No. M'he de dedicar a un altre cosa. No puc treballar del que m'agrada.">
+                                    <label class="form-check-label" for="bd-4-2">
+                                        No. M'he de dedicar a un altre cosa. No puc treballar del que m'agrada.
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- BD 5-->
+                            <div class="form-group">
+                                <p>Quines <strong>estratègies</strong> utilitzes per a promocionar-te?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Xarxes socials" id="bd-5-1"
+                                        name="bd-5">
+                                    <label class="form-check-label" for="bd-5-1">
+                                        Xarxes socials
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Vídeos i grabacions en diverses plataformes" id="bd-5-2" name="bd-5">
+                                    <label class="form-check-label" for="bd-5-2">
+                                        Vídeos i grabacions en diverses plataformes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Concerts i actuacions en viu"
+                                        id="bd-5-3" name="bd-5">
+                                    <label class="form-check-label" for="bd-5-3">
+                                        Concerts i actuacions en viu
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Col·laboracions amb altres músics" id="bd-5-4" name="bd-5">
+                                    <label class="form-check-label" for="bd-5-4">
+                                        Col·laboracions amb altres músics
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Publicitat pagada"
+                                        id="bd-5-5" name="bd-5">
+                                    <label class="form-check-label" for="bd-5-5">
+                                        Publicitat pagada
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Premsa i mitjans de comunicació" id="bd-5-6" name="bd-5">
+                                    <label class="form-check-label" for="bd-5-6">
+                                        Premsa i mitjans de comunicació
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Butlletins i mailing"
+                                        id="bd-5-7" name="bd-5">
+                                    <label class="form-check-label" for="bd-5-7">
+                                        Butlletins i mailing
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Pàgina web i/o blog"
+                                        id="bd-5-8" name="bd-5">
+                                    <label class="form-check-label" for="bd-5-8">
+                                        Pàgina web i/o blog
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Altre..." id="bd-5-9"
+                                        name="bd-5">
+                                    <label class="form-check-label" for="bd-5-9">
+                                        Altre...
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- BD 6-->
+                            <div class="form-group">
+                                <p>Tens algún <strong>projecte</strong> en aquest moment? <br>Podríes descriure'l
+                                    breument?
+                                </p>
+                                <textarea class="form-control" id="bd-6" style="height: 100px" name="bd-6"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMA DE PAGAMENT -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button disabled class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapsePayment" aria-expanded="false" aria-controls="collapseQuota"
+                            id="skipAction">
+                            <strong>FORMA DE PAGAMENT</strong>
+                        </button>
+                    </h2>
+                    <div id="collapsePayment" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
+                        <div class="accordion-body">
+                            <div class="info-card">
+                                <span>Realitzar una transferència bancària al <strong>IBAN:
+                                        AD7000010000223359700100</strong> o bé un <strong>Bizum al (+376) 355
+                                        526</strong>.</span>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <p>Forma de pagament</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="user_payment" id="transfer"
+                                        value="Transferència bancària">
+                                    <label class="form-check-label" for="transfer">
+                                        Transferència bancària
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="user_payment" id="bizum"
+                                        value="Bizum">
+                                    <label class="form-check-label" for="bizum">
+                                        Bizum
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TERMES I CONDICIONS -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button disabled class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <strong>TERMES I CONDICIONS</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionForm">
+                        <div class="accordion-body">
+
+                            <div class="form-group">
+                                <p>Marca les següents opcions</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="info" name="info" required>
+                                    <label class="form-check-label" for="info" required>
+                                        Declaro que la informació proporcionada és precisa i completa.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="policy" name="policy" required>
+                                    <label class="form-check-label" for="policy" required>
+                                        Accepto complir les normes de l'associació.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Butlletí anual informatiu de les novetats i els avanços de l'associació.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="true" id="user_bulletin"
+                                        name="boletin">
+                                    <label class="form-check-label" for="user_bulletin">
+                                        Declino rebre el butlletí anual de l'ASMA al correu proporcionat.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <input type="hidden" name="csrf_token" id="csrf_token"
+                                    value="<?html echo $_SESSION['csrf_token']; ?>">
+                                <div class="spinner-border text-primary m-auto" role="status" style="display: none"
+                                    id="submitLoader">
+                                    <span class="visually-hidden">Processant les seves dades...</span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary m-auto" disabled>Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Success Message-->
+        <div id="responseSuccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+            style="color: rgb(54, 102, 54); width: 100%; max-width: 350px;">
+            <div class="toast-header" style="background-color:rgb(195, 255, 195)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-check2-circle" viewBox="0 0 16 16">
+                    <path
+                        d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                    <path
+                        d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                </svg>
+                <strong class="me-auto">&nbsp; Subscripció finalitzada</strong>
+            </div>
+            <div class="toast-body">
+                <p>La seva subscripció s'ha completat amb èxit!</p>
+                <p>Un cop nosaltres, tinguem la <i>confirmació del seu pagament i les seves dades</i>, rebrà un correu
+                    electrònic de confirmació a la seva adreça:<br><strong id="responseSuccesMessage"></strong>.</p>
+                <p>Si té cap pregunta o inquietud, no dubti a posar-se en <a
+                        href="mailto:comunica@musicsandorra.com">contacte amb el nostre servei d'assistència.</a> </p>
+                <p>Tingui en compte que l'aplicació es troba en versió beta, la qual podria experimentar fallos
+                    puntuals. Agraïm la seva paciència i comprensió mentre treballem per millorar l'experiència.</p>
+                <p>Gràcies per la seva confiança i suport continuat.</p>
+                <div class="d-flex justify-content-center">
+                    <img class="img-fluid m-auto" width="80" src="/favicon.ico" alt="ASMA logo">
+                </div>
+            </div>
+            <div class="text-center mb-5">
+                <a type="role" class="btn btn-success" href="/">Tornar a l'inici</a>
+            </div>
+        </div>
+        <!-- Error Message-->
+        <div aria-live="polite" aria-atomic="true" class="position-absolute" style="z-index : 100;">
+            <div id="responseError" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+                style="color: rgb(97, 28, 45); width: 100%; max-width: 350px;">
+                <div class="toast-header" style="background-color:rgb(255, 195, 220)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-exclamation-octagon" viewBox="0 0 16 16">
+                        <path
+                            d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z" />
+                        <path
+                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                    </svg>
+                    <strong class="me-auto">&nbsp; Ha ocorregut algun error</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <p>Ho sentim, però s'ha produït un error en processar la seva subscripció.</p>
+                    <p>El missatge d'error diu:</p>
+                    <p><strong id="responseErrorMessage"></strong></p>
+                    <p>En cas que el problema persisteixi, poseu-vos en <a
+                            href="mailto:comunica@musicsandorra.com">contacte amb el nostre servei d'assistència.</a>
+                    </p>
+                    <p>Gràcies per la seva comprensió.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="footer">
+    <div class="p-3 footer-menu m-0 text-center"
+        style="color: rgb(199, 199, 199); background-color: var(--dark-main);">
+        <p class="p-0 m-0">⚡ Web desenvolupada i dissenyada per:  <a style="color: rgb(185, 55, 94);" href="mailto:erikcodedeveloper@gmail.com">ErikWebDeveloper</a></p>
+    </div>
+</section>
+
+
+    <script>
+        // Pasar ID de elementos: input, containerPreview, imagePreview
+        function mostrarVistaPrevia(input, containerPreview, imagePreview) {
+            const inputFoto = document.getElementById(input);
+            const contenedorPreview = document.getElementById(containerPreview);
+            const vistaPrevia = document.getElementById(imagePreview);
+
+            if (inputFoto.files && inputFoto.files[0]) {
+                const lector = new FileReader();
+
+                lector.onload = function (e) {
+                    vistaPrevia.src = e.target.result;
+                };
+
+                lector.readAsDataURL(inputFoto.files[0]);
+                contenedorPreview.style.display = 'block'; // Mostrar el contenedor de la vista previa
+            } else {
+                contenedorPreview.style.display = 'none'; // Ocultar el contenedor si no hay imagen seleccionada
+            }
+        }
+
+        let userFoto = {
+            inputId: 'user_foto',
+            containerPreview: 'contenedorPreviewFoto',
+            preview: 'previewFoto'
+        }
+        document.getElementById('user_foto').addEventListener('change', () => { mostrarVistaPrevia(userFoto.inputId, userFoto.containerPreview, userFoto.preview) });
+
+        let userPasport = {
+            inputId: 'user_pasport',
+            containerPreview: 'contenedorPreviewPasport',
+            preview: 'previewPasport'
+        }
+        document.getElementById('user_pasport').addEventListener('change', () => { mostrarVistaPrevia(userPasport.inputId, userPasport.containerPreview, userPasport.preview) });
+
+        let grupoLogo = {
+            inputId: 'grupo_logo',
+            containerPreview: 'contenedorPreviewLogo',
+            preview: 'previewLogo'
+        }
+        document.getElementById('grupo_logo').addEventListener('change', () => { mostrarVistaPrevia(grupoLogo.inputId, grupoLogo.containerPreview, grupoLogo.preview) });
+
+        let memberFoto = {
+            inputId: 'member_foto',
+            containerPreview: 'contenedorPreviewFotoMember',
+            preview: 'previewFotoMember'
+        }
+        document.getElementById('member_foto').addEventListener('change', () => { mostrarVistaPrevia(memberFoto.inputId, memberFoto.containerPreview, memberFoto.preview) });
+
+        let memberPasport = {
+            inputId: 'member_pasport',
+            containerPreview: 'contenedorPreviewPasportMember',
+            preview: 'previewPasportMember'
+        }
+        document.getElementById('member_pasport').addEventListener('change', () => { mostrarVistaPrevia(memberPasport.inputId, memberPasport.containerPreview, memberPasport.preview) });
+
+    </script>
+
+    <script src="/assets/js/subscripcions.js"></script>
+</body>
+
+</html>
